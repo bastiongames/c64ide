@@ -14,7 +14,7 @@
     "package:all": "yarn build && electron-builder build -mwl --publish never",
     "package:win": "yarn build && electron-builder build --win --x64 --publish never",
     "package:linux": "yarn build && electron-builder build --linux --publish never",
-    "publish": "yarn build && electron-builder build --publish always"
+    "publish:win": "yarn build && electron-builder build --win --x64 --publish always"
   },
   "repository": "https://github.com/bastiongames/c64ide.git",
   "author": "Eric Pattison <epattison@bastiongames.com>",
