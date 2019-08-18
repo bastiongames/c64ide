@@ -10,7 +10,8 @@
         "noImplicitAny": true,
         "allowJs": true,
         "outDir": "out",
-        "baseUrl": "."
+        "baseUrl": ".",
+        "jsx": "react"
     },
     "exclude": [
         "node_modules"

@@ -1,6 +1,5 @@
 import {app} from "electron";
 import { WindowManager } from "./WindowManager";
-import * as path from "path";
 
 app.on("ready", () => {
     WindowManager.create("main", "main.html");

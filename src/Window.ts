@@ -18,7 +18,8 @@ export interface IWindow {
 
 export class Window extends BrowserWindow implements IWindow {
     constructor(file: string, settings: IWindowSettings) {
-        super({...defaultSettings, ...settings});
+        super({...defaultSettings, ...settings, webPreferences: {nodeIntegration: true}});
+        console.log(`loading file ${file}`);
         this.loadFile(file);
 
         this.once("ready-to-show", () => {

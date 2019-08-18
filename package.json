@@ -4,8 +4,9 @@
   "description": "C64 IDE and Emulator",
   "main": "out/index.js",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "compile": "tsc",
+    "static": "copyfiles -u 1 src/**/*.html src/**/*.css ./out",
+    "build": "yarn compile && yarn static",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "yarn build && electron ./out/index.js",
     "start:last": "electron ./out/index.js",
@@ -21,6 +22,9 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.8.5",
+    "copyfiles": "^2.1.1",
     "electron": "^6.0.2",
     "electron-builder": "^21.2.0",
     "react": "^16.9.0",
@@ -28,7 +32,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "react-dom": "^16.9.0"
   },
   "build": {
     "productName": "C64 IDE",
