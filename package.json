@@ -1,0 +1,46 @@
+{
+  "name": "c64ide",
+  "version": "0.0.0",
+  "description": "C64 IDE and Emulator",
+  "main": "out/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "yarn build && electron ./out/index.js",
+    "start:last": "electron ./out/index.js",
+    "check:version": "electron --version",
+    "package": "yarn build && electron-builder build --publish never",
+    "package:all": "yarn build && electron-builder build -mwl --publish never",
+    "package:win": "yarn build && electron-builder build --win --x64 --publish never",
+    "package:linux": "yarn build && electron-builder build --linux --publish never",
+    "publish": "yarn build && electron-builder build --publish always"
+  },
+  "repository": "https://github.com/bastiongames/c64ide.git",
+  "author": "Eric Pattison <epattison@bastiongames.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "electron": "^6.0.2",
+    "electron-builder": "^21.2.0",
+    "react": "^16.9.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "build": {
+    "productName": "C64 IDE",
+    "appId": "com.bastiongames.c64ide",
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "publish": {
+      "provider": "github"
+    }
+  }
+}

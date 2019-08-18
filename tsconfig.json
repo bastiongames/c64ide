@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": true,
+        "allowJs": true,
+        "outDir": "out",
+        "baseUrl": "."
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/**/*", "src/index.js"
+    ]
+}
